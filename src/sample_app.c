@@ -7,7 +7,7 @@
 
 #include <time.h>
 #include <unistd.h> // for usleep
-#define ONE_SECOND_IN_USEC 1000 * 1000;
+#define ONE_SECOND_IN_USEC 1000 * 1000
 
 // The current version of this application for printing to the console
 int const CURRENT_VERSION = 1;

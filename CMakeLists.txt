@@ -43,7 +43,7 @@ target_compile_options(sample_app.elf PRIVATE
 )
 
 # Add '-shared' to the linker flags to produce the correct ELF file type.
-set(BADGEVMS_LINK_FLAGS
+set(BADGEVMS_LINK_FLAGS -Wl,-v
         -shared -nostartfiles -nostdlib -Wl,--gc-sections -Wl,--strip-debug -Wl,-e,main --sysroot=${SDK_PATH}
 )
 target_link_options(sample_app.elf PRIVATE ${BADGEVMS_LINK_FLAGS})

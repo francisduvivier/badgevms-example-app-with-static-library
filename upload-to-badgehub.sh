@@ -1,9 +1,9 @@
 ./build.sh
 LOCAL_ELF_NAME=sample_app.elf
 
-#BADGEHUB_SAMPLE_APP_API_TOKEN=TODO_EXPORT_IN_ENV_MANUALLY
-BADGEHUB_PROJECT_SLUG=badgevms_example_app_with_static_library
-REMOTE_ELF_NAME=sample_app.elf
+export BADGEHUB_SAMPLE_APP_API_TOKEN=50af7c9c4c9b9a3c95a6bf2b391c510c
+BADGEHUB_PROJECT_SLUG=badgehub_dev
+REMOTE_ELF_NAME=hello.elf
 
 curl -X POST -H "badgehub-api-token: ${BADGEHUB_SAMPLE_APP_API_TOKEN}" \
 -F "file=@./build/${LOCAL_ELF_NAME}" \

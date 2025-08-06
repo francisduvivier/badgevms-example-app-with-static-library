@@ -3,15 +3,16 @@
 #include <stdatomic.h> // for atomic variables
 #include <stdbool.h>   // for bool type
 #include <stdio.h>
-#include <stdlib.h> // for atoi
+#include <cJSON.h> // for atoi
 
 #include <time.h>
 #include <unistd.h> // for usleep
 
 #define ONE_SECOND_IN_USEC (1000 * 1000)
 
+cJSON *test;
 // The current version of this application for printing to the console
-const int CURRENT_VERSION = 2;
+const int CURRENT_VERSION = 3;
 time_t process_start_time;
 
 void version_logger_thread(void *data) {
@@ -23,6 +24,7 @@ void version_logger_thread(void *data) {
 }
 
 int main(int argc, char *argv[]) {
+    test = cJSON_CreateObject();
     // Initialize the process start time
     process_start_time = time(NULL);
     printf("The current process timestamp is: %ld\n", (long)process_start_time);

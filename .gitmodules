@@ -1,3 +1,6 @@
 [submodule "firmware"]
 	path = firmware
 	url = https://gitlab.com/why2025/team-badge/firmware.git
+[submodule "cJSON"]
+	path = cJSON
+	url = git@github.com:DaveGamble/cJSON.git

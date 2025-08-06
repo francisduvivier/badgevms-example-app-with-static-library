@@ -26,7 +26,7 @@ add_executable(sample_app.elf src/sample_app.c)
 link_directories(lib)
 
 # Add the cJSON subdirectory
-add_subdirectory(cJSON)
+add_subdirectory(cJSONbackup)
 
 # List your static libraries here. For 'libmymath.a', you would list 'mymath'.
 set(MY_STATIC_LIBS
@@ -57,7 +57,7 @@ endforeach()
 # --- Include Directories ---
 target_include_directories(sample_app.elf SYSTEM PRIVATE
         "${SDK_PATH}/include"
-        "cJSON"
+        "cJSONbackup"
 )
 
 # --- User-friendly Output ---

@@ -30,8 +30,12 @@ set(CMAKE_SYSROOT ${SDK_PATH})
 # BadgeVMS applications are position-independent ELF shared objects.
 add_library(app_elf SHARED "src/sample_app.c")
 
-# Set the final output name to 'sample_app.elf'.
-set_target_properties(app_elf PROPERTIES PREFIX "" OUTPUT_NAME "sample_app.elf")
+# Set the final output name to 'sample_app.elf' by controlling all parts.
+set_target_properties(app_elf PROPERTIES
+        PREFIX ""                  # Remove the 'lib' prefix
+        OUTPUT_NAME "sample_app"   # Set the base name
+        SUFFIX ".elf"              # Explicitly set the extension to .elf
+)
 
 # --- Required Build Flags (from BadgeVMS README) ---
 set(BADGEVMS_COMPILE_FLAGS

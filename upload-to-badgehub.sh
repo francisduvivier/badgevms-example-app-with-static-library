@@ -1,11 +1,12 @@
 ./build.sh
+LOCAL_ELF_NAME=sample_app.elf
+
 #BADGEHUB_SAMPLE_APP_API_TOKEN=TODO_EXPORT_IN_ENV_MANUALLY
 BADGEHUB_PROJECT_SLUG=badgevms_example_app_with_static_library
-LOCAL_ELF_NAME=badgevms_example_app_with_static_library.elf
-REMOTE_ELF_NAME=badgevms_example_app_with_static_library.elf
+REMOTE_ELF_NAME=sample_app.elf
 
 curl -X POST -H "badgehub-api-token: ${BADGEHUB_SAMPLE_APP_API_TOKEN}" \
--F "file=@./build/app_elfs/${LOCAL_ELF_NAME}" \
+-F "file=@./build/${LOCAL_ELF_NAME}" \
 https://badge.why2025.org/api/v3/projects/${BADGEHUB_PROJECT_SLUG}/draft/files/${REMOTE_ELF_NAME} \
 && echo "did upload badgehub.elf to project ${BADGEHUB_PROJECT_SLUG}" && \
 curl -X 'PATCH' -H "badgehub-api-token: ${BADGEHUB_SAMPLE_APP_API_TOKEN}" \

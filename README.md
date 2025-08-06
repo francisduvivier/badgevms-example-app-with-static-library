@@ -30,7 +30,7 @@ This repository also contains a script that allows you to upload an app to Badge
 To use this, you first need to:
 * Create a project on [https://badge.why2025.org/page/create-project](https://badge.why2025.org/page/create-project).
 * Create a project API token.
-* Set the project API token in your env and the project name in the `upload-to-badgehub.sh` script.
+* Set the BADGEHUB_SAMPLE_APP_API_TOKEN in your env and the BADGEHUB_PROJECT_SLUG in the `upload-to-badgehub.sh` script.
 
 Then you can use the script to upload your application:
 ```bash

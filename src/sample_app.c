@@ -11,7 +11,7 @@
 #define ONE_SECOND_IN_USEC (1000 * 1000)
 
 // The current version of this application for printing to the console
-const int CURRENT_VERSION = 1;
+const int CURRENT_VERSION = 2;
 time_t process_start_time;
 
 void version_logger_thread(void *data) {

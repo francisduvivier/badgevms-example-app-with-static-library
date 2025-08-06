@@ -2,13 +2,21 @@
 # Optimized for use within an ESP-IDF 5.5 environment.
 
 cmake_minimum_required(VERSION 3.16)
-project(BadgeVMS-App C)
 
-# --- Toolchain and SDK Setup ---
-# This assumes 'riscv32-esp-elf-gcc' is in the PATH, which is true
-# in an ESP-IDF 5.5 environment after sourcing 'export.sh'.
+# --- Toolchain and System Configuration (MUST be before 'project()') ---
+
+# Tell CMake we are cross-compiling for a generic, bare-metal system.
+# This prevents it from adding host-specific flags (e.g. -arch on macOS).
+set(CMAKE_SYSTEM_NAME Generic)
+
+# Explicitly set the C compiler. This must be done before the project()
+# command so CMake uses it for the initial compiler checks.
 set(CMAKE_C_COMPILER "riscv32-esp-elf-gcc")
 
+# Now, define the project. CMake will use the compiler defined above.
+project(BadgeVMS-App C)
+
+# --- SDK Setup ---
 # The BadgeVMS SDK must be present in a directory named 'sdk_dist'.
 set(SDK_PATH "${CMAKE_CURRENT_SOURCE_DIR}/sdk_dist")
 if(NOT EXISTS "${SDK_PATH}")
